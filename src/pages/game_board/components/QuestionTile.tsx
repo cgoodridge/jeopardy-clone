@@ -7,7 +7,7 @@ interface QuestionTileProps {
     disabled?: boolean;
 }
 
-const QuestionTile: React.FC<QuestionTileProps> = ({ question, onSelect, disabled = false }) => {
+const QuestionTile: React.FC<QuestionTileProps> = ({ question }) => {
     const [isQuestionVisible, setIsQuestionVisible] = useState(false);
 
     const handleClick = () => {

@@ -1,6 +1,4 @@
-import React from 'react';
-import QuestionTile from './components/QuestionTile';
-import questionsData from './data/questions.json';
+
 import CategoryColumn from './components/CategoryColumn';
 import type { Round, Question } from './types/question-pack.types';
 
@@ -9,7 +7,6 @@ interface GameBoardProps {
     onQuestionSelect: (question: Question) => void;
 }
 
-// type QuestionsData = Category[];
 
 const GameBoard = ({
     round,
