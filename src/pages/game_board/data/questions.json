@@ -1,0 +1,435 @@
+
+{
+    "rounds": [
+      {
+        "round_name": "Round 1",
+        "categories": [
+          {
+            "category_name": "Marvel & DC",
+            "questions": [
+              {
+                "question_desc": "What is the name of Thor's enchanted hammer?",
+                "question_answer": "Mjolnir",
+                "is_daily_double": false,
+                "dollar_amount": 200
+              },
+              {
+                "question_desc": "What is the real name of Batman?",
+                "question_answer": "Bruce Wayne",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "Which fictional African nation is home to Black Panther?",
+                "question_answer": "Wakanda",
+                "is_daily_double": false,
+                "dollar_amount": 600
+              },
+              {
+                "question_desc": "What is the name of Superman's home planet?",
+                "question_answer": "Krypton",
+                "is_daily_double": true,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "What is the name of the organization that Nick Fury leads in the Marvel Cinematic Universe?",
+                "question_answer": "S.H.I.E.L.D.",
+                "is_daily_double": false,
+                "dollar_amount": 1000
+              }
+            ]
+          },
+          {
+            "category_name": "Music Legends",
+            "questions": [
+              {
+                "question_desc": "Which singer is known as the King of Pop?",
+                "question_answer": "Michael Jackson",
+                "is_daily_double": false,
+                "dollar_amount": 200
+              },
+              {
+                "question_desc": "Which British band released the album Abbey Road?",
+                "question_answer": "The Beatles",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "What is the stage name of Stefani Germanotta?",
+                "question_answer": "Lady Gaga",
+                "is_daily_double": false,
+                "dollar_amount": 600
+              },
+              {
+                "question_desc": "Which artist released the hit song Purple Rain?",
+                "question_answer": "Prince",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "Which singer released the album Back to Black in 2006?",
+                "question_answer": "Amy Winehouse",
+                "is_daily_double": false,
+                "dollar_amount": 1000
+              }
+            ]
+          },
+          {
+            "category_name": "Movies",
+            "questions": [
+              {
+                "question_desc": "In which movie franchise would you find the character Jack Sparrow?",
+                "question_answer": "Pirates of the Caribbean",
+                "is_daily_double": false,
+                "dollar_amount": 200
+              },
+              {
+                "question_desc": "What is the name of the kingdom in Disney's Frozen?",
+                "question_answer": "Arendelle",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "Which actor played Iron Man in the Marvel Cinematic Universe?",
+                "question_answer": "Robert Downey Jr.",
+                "is_daily_double": false,
+                "dollar_amount": 600
+              },
+              {
+                "question_desc": "What is the name of the fictional African kingdom in the movie Coming to America?",
+                "question_answer": "Zamunda",
+                "is_daily_double": true,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "Which 1994 film features the characters Andy Dufresne and Ellis Boyd Redding?",
+                "question_answer": "The Shawshank Redemption",
+                "is_daily_double": false,
+                "dollar_amount": 1000
+              }
+            ]
+          },
+          {
+            "category_name": "Television",
+            "questions": [
+              {
+                "question_desc": "What is the name of the coffee shop frequently visited by the characters in Friends?",
+                "question_answer": "Central Perk",
+                "is_daily_double": false,
+                "dollar_amount": 200
+              },
+              {
+                "question_desc": "In The Simpsons, what is the name of the family's baby?",
+                "question_answer": "Maggie",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "What is the name of the fictional continent where most of Game of Thrones takes place?",
+                "question_answer": "Westeros",
+                "is_daily_double": false,
+                "dollar_amount": 600
+              },
+              {
+                "question_desc": "What is the name of Walter White's former student and business partner in Breaking Bad?",
+                "question_answer": "Jesse Pinkman",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "Which television series features the fictional paper company Dunder Mifflin?",
+                "question_answer": "The Office",
+                "is_daily_double": false,
+                "dollar_amount": 1000
+              }
+            ]
+          },
+          {
+            "category_name": "Video Games",
+            "questions": [
+              {
+                "question_desc": "What is the name of Nintendo's famous mustachioed plumber?",
+                "question_answer": "Mario",
+                "is_daily_double": false,
+                "dollar_amount": 200
+              },
+              {
+                "question_desc": "Which video game series features the character Master Chief?",
+                "question_answer": "Halo",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "What is the name of the main character in The Legend of Zelda series?",
+                "question_answer": "Link",
+                "is_daily_double": false,
+                "dollar_amount": 600
+              },
+              {
+                "question_desc": "Which battle royale game features a shrinking storm and building mechanics?",
+                "question_answer": "Fortnite",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "What is the name of the fictional city where Grand Theft Auto V takes place?",
+                "question_answer": "Los Santos",
+                "is_daily_double": false,
+                "dollar_amount": 1000
+              }
+            ]
+          },
+          {
+            "category_name": "Internet & Memes",
+            "questions": [
+              {
+                "question_desc": "Which social media platform was originally known for its short six-second looping videos?",
+                "question_answer": "Vine",
+                "is_daily_double": false,
+                "dollar_amount": 200
+              },
+              {
+                "question_desc": "What does the abbreviation LOL stand for?",
+                "question_answer": "Laughing Out Loud",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "What is the name of the video-sharing platform owned by Google?",
+                "question_answer": "YouTube",
+                "is_daily_double": false,
+                "dollar_amount": 600
+              },
+              {
+                "question_desc": "Which animated character became famous in a viral meme for saying 'This is fine' while surrounded by fire?",
+                "question_answer": "The dog from the Gunshow comic",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "What year was the first iPhone released?",
+                "question_answer": "2007",
+                "is_daily_double": false,
+                "dollar_amount": 1000
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "round_name": "Round 2",
+        "categories": [
+          {
+            "category_name": "Marvel & DC",
+            "questions": [
+              {
+                "question_desc": "What is the name of the metal bonded to Wolverine's skeleton?",
+                "question_answer": "Adamantium",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "What is the name of the villain who killed Bruce Wayne's parents?",
+                "question_answer": "Joe Chill",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "Which Marvel character is known as the Sorcerer Supreme?",
+                "question_answer": "Doctor Strange",
+                "is_daily_double": false,
+                "dollar_amount": 1200
+              },
+              {
+                "question_desc": "What is the name of the planet where the Guardians of the Galaxy first meet the Collector?",
+                "question_answer": "Knowhere",
+                "is_daily_double": false,
+                "dollar_amount": 1600
+              },
+              {
+                "question_desc": "What is the name of the alternate dimension ruled by Dormammu?",
+                "question_answer": "The Dark Dimension",
+                "is_daily_double": true,
+                "dollar_amount": 2000
+              }
+            ]
+          },
+          {
+            "category_name": "Music Legends",
+            "questions": [
+              {
+                "question_desc": "Which artist released the critically acclaimed album Lemonade in 2016?",
+                "question_answer": "Beyoncé",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "Which musician was the lead singer of the band Nirvana?",
+                "question_answer": "Kurt Cobain",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "What was the title of David Bowie's final studio album, released shortly before his death?",
+                "question_answer": "Blackstar",
+                "is_daily_double": false,
+                "dollar_amount": 1200
+              },
+              {
+                "question_desc": "Which singer released the album The Miseducation of Lauryn Hill?",
+                "question_answer": "Lauryn Hill",
+                "is_daily_double": false,
+                "dollar_amount": 1600
+              },
+              {
+                "question_desc": "Which Jamaican musician released the album Exodus and helped popularize reggae internationally?",
+                "question_answer": "Bob Marley",
+                "is_daily_double": false,
+                "dollar_amount": 2000
+              }
+            ]
+          },
+          {
+            "category_name": "Movies",
+            "questions": [
+              {
+                "question_desc": "Which 1972 film features the Corleone crime family?",
+                "question_answer": "The Godfather",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "In The Matrix, which color pill does Neo take?",
+                "question_answer": "The red pill",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "Who directed the 1994 film Pulp Fiction?",
+                "question_answer": "Quentin Tarantino",
+                "is_daily_double": false,
+                "dollar_amount": 1200
+              },
+              {
+                "question_desc": "What is the name of the fictional language spoken by the Na'vi in Avatar?",
+                "question_answer": "Na'vi",
+                "is_daily_double": true,
+                "dollar_amount": 1600
+              },
+              {
+                "question_desc": "Which 1950 film was the first animated feature produced by Walt Disney?",
+                "question_answer": "Cinderella",
+                "is_daily_double": false,
+                "dollar_amount": 2000
+              }
+            ]
+          },
+          {
+            "category_name": "Television",
+            "questions": [
+              {
+                "question_desc": "What is the name of the fictional town where Stranger Things takes place?",
+                "question_answer": "Hawkins",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "In The Sopranos, what is the name of Tony Soprano's psychiatrist?",
+                "question_answer": "Dr. Jennifer Melfi",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "Which actor played Tyrion Lannister in Game of Thrones?",
+                "question_answer": "Peter Dinklage",
+                "is_daily_double": false,
+                "dollar_amount": 1200
+              },
+              {
+                "question_desc": "What is the name of the fictional advertising agency in Mad Men?",
+                "question_answer": "Sterling Cooper",
+                "is_daily_double": false,
+                "dollar_amount": 1600
+              },
+              {
+                "question_desc": "Which television series follows the Roy family and their media conglomerate Waystar Royco?",
+                "question_answer": "Succession",
+                "is_daily_double": false,
+                "dollar_amount": 2000
+              }
+            ]
+          },
+          {
+            "category_name": "Video Games",
+            "questions": [
+              {
+                "question_desc": "What is the name of the protagonist in the God of War series?",
+                "question_answer": "Kratos",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "Which company developed the Dark Souls series?",
+                "question_answer": "FromSoftware",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "Which fictional kingdom is the primary setting of The Legend of Zelda: Breath of the Wild?",
+                "question_answer": "Hyrule",
+                "is_daily_double": false,
+                "dollar_amount": 1200
+              },
+              {
+                "question_desc": "Which 2013 video game features the characters Joel and Ellie?",
+                "question_answer": "The Last of Us",
+                "is_daily_double": false,
+                "dollar_amount": 1600
+              },
+              {
+                "question_desc": "What is the name of the corporation responsible for the outbreak in the Resident Evil series?",
+                "question_answer": "Umbrella Corporation",
+                "is_daily_double": false,
+                "dollar_amount": 2000
+              }
+            ]
+          },
+          {
+            "category_name": "Internet & Memes",
+            "questions": [
+              {
+                "question_desc": "What was the name of the first widely recognized web browser, released in 1993?",
+                "question_answer": "Mosaic",
+                "is_daily_double": false,
+                "dollar_amount": 400
+              },
+              {
+                "question_desc": "Which social media platform was originally launched as a photo-sharing app called Burbn?",
+                "question_answer": "Instagram",
+                "is_daily_double": false,
+                "dollar_amount": 800
+              },
+              {
+                "question_desc": "What does the internet slang term TL;DR mean?",
+                "question_answer": "Too Long; Didn't Read",
+                "is_daily_double": false,
+                "dollar_amount": 1200
+              },
+              {
+                "question_desc": "Which website was originally launched as a link-sharing and discussion platform in 2005?",
+                "question_answer": "Reddit",
+                "is_daily_double": false,
+                "dollar_amount": 1600
+              },
+              {
+                "question_desc": "What was the name of the virtual world launched by Linden Lab in 2003?",
+                "question_answer": "Second Life",
+                "is_daily_double": true,
+                "dollar_amount": 2000
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
