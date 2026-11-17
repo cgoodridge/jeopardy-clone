@@ -12,7 +12,7 @@ const CategoryColumn = ({
   onQuestionSelect,
 }: CategoryColumnProps) => {
   return (
-    <div className="category-column">
+    <div className="flex flex-col min-w-[150px] shrink-0">
       <h2>{category.category_name}</h2>
 
       {category.questions.map((question) => (
@@ -20,7 +20,7 @@ const CategoryColumn = ({
           key={question.question_id}
           question={question}
           onSelect={onQuestionSelect}
-          
+
         />
       ))}
     </div>

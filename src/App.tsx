@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router';
+import { Routes, Route } from 'react-router';
 import Home from './pages/Home/Home';
 import GameBoard from './pages/game_board/GameBoard';
 import questions from './pages/game_board/data/questions.json';
@@ -19,9 +19,10 @@ function App() {
     return (
         <>
             <div>
-                <nav>
+                {/* <nav>
+                    <p>NOT Jeopardy</p>
                     <Link to="/">Home</Link> | <Link to="/play">Game Board</Link>
-                </nav>
+                </nav> */}
 
                 <Routes>
                     <Route path="/" element={<Home />} />
