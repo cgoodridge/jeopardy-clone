@@ -9,6 +9,8 @@ interface QuestionTileProps {
 
 const QuestionTile: React.FC<QuestionTileProps> = ({ question }) => {
     const [isQuestionVisible, setIsQuestionVisible] = useState(false);
+    console.log("QuestionTile rendered with question:", question);
+
 
     const handleClick = () => {
         setIsQuestionVisible(true);
@@ -55,15 +57,18 @@ const QuestionTile: React.FC<QuestionTileProps> = ({ question }) => {
                     onClick={handleClose}
                 >
                     <div
+                        className='flex flex-col justify-center items-center'
                         style={{
-                            backgroundColor: '#333',
+                            background: 'radial-gradient(circle, #082D4B, #0A3E5F)',
                             padding: '20px',
                             borderRadius: '8px',
-                            maxWidth: '600px',
+                            width: '100%',
+                            height: '100%',
                             textAlign: 'center',
                         }}
                     >
-                        <p style={{ fontSize: '20px' }}>{question.question_desc}</p>
+                        
+                        <p style={{ fontSize: '34px' }}>{question.question_desc}</p>
                         <button
                             onClick={handleClose}
                             style={{
