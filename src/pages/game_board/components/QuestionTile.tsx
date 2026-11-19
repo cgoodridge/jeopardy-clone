@@ -30,8 +30,8 @@ const QuestionTile: React.FC<QuestionTileProps> = ({ question }) => {
                     borderRadius: '8px',
                     padding: '20px',
                     textAlign: 'center',
-                    width: '150px',
-                    margin: '10px',
+                    width: '200px',
+                    margin: '4px',
                 }}
             >
                 <span style={{ color: '#F6BD5C', fontSize: '24px', fontWeight: 'bold' }}>
@@ -67,8 +67,9 @@ const QuestionTile: React.FC<QuestionTileProps> = ({ question }) => {
                             textAlign: 'center',
                         }}
                     >
-                        
+
                         <p style={{ fontSize: '34px' }}>{question.question_desc}</p>
+                        
                         <button
                             onClick={handleClose}
                             style={{
