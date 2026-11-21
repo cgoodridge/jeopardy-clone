@@ -11,11 +11,13 @@ import {
 type GameMode = 'individuals' | 'teams';
 
 const playerCounts = [2, 3, 4, 5, 6];
+const teamCounts = [2, 3, 4];
 
 const GameSettingsForm = () => {
     const navigate = useNavigate();
     const [gameMode, setGameMode] = useState<GameMode>('individuals');
     const [playerCount, setPlayerCount] = useState(3);
+    const [teamCount, setTeamCount] = useState(3);
 
     const handleStartGame = () => {
         navigate('/play');
@@ -45,11 +47,10 @@ const GameSettingsForm = () => {
                             type="button"
                             aria-pressed={gameMode === 'individuals'}
                             onClick={() => setGameMode('individuals')}
-                            className={`flex min-h-[78px] items-center gap-3 rounded-xl border px-3 py-3 text-left transition-colors ${
-                                gameMode === 'individuals'
-                                    ? 'border-cyan-400 bg-cyan-950/50'
-                                    : 'border-slate-700 bg-slate-800 hover:bg-slate-700/60'
-                            }`}
+                            className={`flex min-h-[78px] items-center gap-3 rounded-xl border px-3 py-3 text-left transition-colors ${gameMode === 'individuals'
+                                ? 'border-cyan-400 bg-cyan-950/50'
+                                : 'border-slate-700 bg-slate-800 hover:bg-slate-700/60'
+                                }`}
                         >
                             <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${gameMode === 'individuals' ? 'bg-cyan-400 text-slate-950' : 'bg-slate-700 text-slate-400'}`}>
                                 <Users aria-hidden="true" size={20} strokeWidth={1.8} />
@@ -63,11 +64,10 @@ const GameSettingsForm = () => {
                             type="button"
                             aria-pressed={gameMode === 'teams'}
                             onClick={() => setGameMode('teams')}
-                            className={`flex min-h-[78px] items-center gap-3 rounded-xl border px-3 py-3 text-left transition-colors ${
-                                gameMode === 'teams'
-                                    ? 'border-cyan-400 bg-cyan-950/50'
-                                    : 'border-slate-700 bg-slate-800 hover:bg-slate-700/60'
-                            }`}
+                            className={`flex min-h-[78px] items-center gap-3 rounded-xl border px-3 py-3 text-left transition-colors ${gameMode === 'teams'
+                                ? 'border-cyan-400 bg-cyan-950/50'
+                                : 'border-slate-700 bg-slate-800 hover:bg-slate-700/60'
+                                }`}
                         >
                             <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${gameMode === 'teams' ? 'bg-cyan-400 text-slate-950' : 'bg-slate-700 text-slate-400'}`}>
                                 <LayoutGrid aria-hidden="true" size={19} strokeWidth={1.8} />
@@ -83,26 +83,44 @@ const GameSettingsForm = () => {
                 <section className="border-t border-slate-700/80 pt-5" aria-labelledby="player-count-heading">
                     <StepHeading
                         number="2"
-                        title="How many players?"
-                        description="You can add more later"
+                        title={gameMode === 'individuals' ? "How many players?" : "How many teams? (2 Per Team)"}
+                        description={gameMode === 'individuals' ? "You can add more later" : "You can adjust later"}
                         id="player-count-heading"
                     />
-                    <div className="mt-3 flex flex-wrap gap-1.5" role="group" aria-label="Number of players">
-                        {playerCounts.map((count) => (
-                            <button
-                                key={count}
-                                type="button"
-                                aria-pressed={playerCount === count}
-                                onClick={() => setPlayerCount(count)}
-                                className={`h-[38px] w-[38px] rounded-lg border text-xs font-semibold transition-colors ${
-                                    playerCount === count
-                                        ? 'border-cyan-400 bg-cyan-400 text-slate-950 shadow-[0_0_0_4px_rgba(34,211,238,0.12)]'
-                                        : 'border-slate-700 bg-slate-800 text-slate-400 hover:border-slate-500 hover:text-white'
-                                }`}
-                            >
-                                {count}
-                            </button>
-                        ))}
+                    <div className="mt-3 flex flex-wrap gap-1.5" role="group" aria-label={gameMode === 'individuals' ? "Number of players" : "Number of teams"}>
+                        {
+                            gameMode === 'individuals' ?
+                                playerCounts.map((count) => (
+                                    <button
+                                        key={count}
+                                        type="button"
+                                        aria-pressed={playerCount === count}
+                                        onClick={() => setPlayerCount(count)}
+                                        className={`h-[38px] w-[38px] rounded-lg border text-xs font-semibold transition-colors ${playerCount === count
+                                            ? 'border-cyan-400 bg-cyan-400 text-slate-950 shadow-[0_0_0_4px_rgba(34,211,238,0.12)]'
+                                            : 'border-slate-700 bg-slate-800 text-slate-400 hover:border-slate-500 hover:text-white'
+                                            }`}
+                                    >
+                                        {count}
+                                    </button>
+                                ))
+                                :
+                                teamCounts.map((count) => (
+                                    <button
+                                        key={count}
+                                        type="button"
+                                        aria-pressed={teamCount === count}
+                                        onClick={() => setTeamCount(count)}
+                                        className={`h-[38px] w-[38px] rounded-lg border text-xs font-semibold transition-colors ${teamCount === count
+                                            ? 'border-cyan-400 bg-cyan-400 text-slate-950 shadow-[0_0_0_4px_rgba(34,211,238,0.12)]'
+                                            : 'border-slate-700 bg-slate-800 text-slate-400 hover:border-slate-500 hover:text-white'
+                                            }`}
+                                    >
+                                        {count}
+                                    </button>
+                                ))
+
+                        }
                     </div>
                 </section>
 
@@ -167,5 +185,22 @@ const StepHeading = ({ number, title, description, id }: StepHeadingProps) => (
         </div>
     </div>
 );
+
+// const PlayerCountSelection = ({count, participantCount, gameMode}) => (
+//     <button
+//         key={count}
+//         type="button"
+//         aria-pressed={participantCount === count}
+//         onClick={
+//             setTeamCount(count)
+//         }
+//         className={`h-[38px] w-[38px] rounded-lg border text-xs font-semibold transition-colors ${teamCount === count
+//             ? 'border-cyan-400 bg-cyan-400 text-slate-950 shadow-[0_0_0_4px_rgba(34,211,238,0.12)]'
+//             : 'border-slate-700 bg-slate-800 text-slate-400 hover:border-slate-500 hover:text-white'
+//             }`}
+//     >
+//         {count}
+//     </button>
+// );
 
 export default GameSettingsForm;
