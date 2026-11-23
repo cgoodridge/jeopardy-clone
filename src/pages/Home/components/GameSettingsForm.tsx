@@ -1,5 +1,6 @@
 ﻿import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { socket } from '../../../services/socket';
 import {
     ChevronDown,
     ChevronRight,
@@ -17,10 +18,54 @@ const GameSettingsForm = () => {
     const navigate = useNavigate();
     const [gameMode, setGameMode] = useState<GameMode>('individuals');
     const [playerCount, setPlayerCount] = useState(3);
+    const [hostName, setHostName] = useState("");
+    const [playerName, setPlayerName] = useState("");
+    const [roomCode, setRoomCode] = useState("");
     const [teamCount, setTeamCount] = useState(3);
 
     const handleStartGame = () => {
-        navigate('/play');
+
+        socket.connect();
+
+        socket.emit("session:create", { hostName }, (response: any) => {
+
+            console.log("Server response:", response);
+            if (!response?.success) {
+                console.error(response.message);
+                console.error("Session creation failed:", response?.message);
+                return;
+            }
+
+            console.log("Navigating to:", `/game/${response.roomCode}`);
+
+            navigate(`/play/${response.roomCode}`, {
+                state: {
+                    playerId: response.playerId,
+                    isHost: true,
+                }
+            });
+        });
+    };
+
+    const handleJoinGame = () => {
+
+        socket.connect();
+
+        socket.emit("session:join", { playerName, roomCode }, (response: any) => {
+
+            if (!response?.success) {
+                console.error(response.message);
+                console.error("Session creation failed:", response?.message);
+                return;
+            }
+
+            navigate(`/play/${response.roomCode}`, {
+                state: {
+                    playerId: response.playerId,
+                    isHost: false,
+                }
+            });
+        });
     };
 
     return (
@@ -155,12 +200,39 @@ const GameSettingsForm = () => {
                 </section>
             </div>
 
+            <input
+                value={hostName}
+                onChange={(e) => setHostName(e.target.value)}
+                placeholder="Enter your name as host."
+            />
+
             <button
                 type="button"
                 onClick={handleStartGame}
                 className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-blue-500 px-4 text-sm font-semibold text-white transition-colors hover:bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
             >
-                Start game
+                Create game
+                <ChevronRight aria-hidden="true" size={17} />
+            </button>
+            <hr />
+            <input
+                value={playerName}
+                onChange={(e) => setPlayerName(e.target.value)}
+                placeholder="Enter your name."
+            />
+
+            <input
+                value={roomCode}
+                onChange={(e) => setRoomCode(e.target.value)}
+                placeholder="Room code"
+            />
+
+            <button
+                type="button"
+                onClick={handleJoinGame}
+                className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-blue-500 px-4 text-sm font-semibold text-white transition-colors hover:bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+            >
+                Join game
                 <ChevronRight aria-hidden="true" size={17} />
             </button>
         </section>
