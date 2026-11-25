@@ -26,7 +26,7 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/play" element={<GameBoard round={currentRound} onQuestionSelect={() => { }} />} />
+                    <Route path="/play/:roomCode" element={<GameBoard round={currentRound} onQuestionSelect={() => { }} />} />
                 </Routes>
             </div>
         </>
