@@ -1,75 +1,24 @@
-# React + TypeScript + Vite
+# Jeopardy Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Jeopardy-like game night application built enhance my game nights with friends. The application is built using modern web technologies and features an Express.js server for backend functionality.
 
-Currently, two official plugins are available:
+## Features
+- Interactive game board with categories and questions.
+- Real-time score tracking.
+- Customizable categories and questions.
+- Responsive design for various devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Infrastructure
 
-## React Compiler
+### Backend
+- **Express.js**: The application uses an Express.js server to handle API requests, manage game data and game sessions..
+- **Routing**: The server includes routes for fetching game data, submitting answers, and managing scores.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- **React**: The frontend is developed using React to create a dynamic and interactive user interface.
+- **TypeScript**: TypeScript is used to ensure type safety and improve code maintainability.
+- **Tailwind CSS**: Tailwind CSS is utilized for styling, enabling a responsive and modern design.
 
-## Expanding the ESLint configuration
+### Data
+- **Firebase Firestore**: Game data, including categories, questions, and answers, is stored in Firebase Firestore, allowing for real-time updates and easy scalability.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
