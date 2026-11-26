@@ -14,11 +14,6 @@ interface GameBoardProps {
     onQuestionSelect: (question: Question) => void;
 }
 
-interface NavigationState {
-    playerId?: string;
-    isHost?: boolean;
-}
-
 const GameBoard = ({
     round,
     onQuestionSelect,

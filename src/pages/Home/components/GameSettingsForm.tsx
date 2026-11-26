@@ -1,6 +1,5 @@
 ﻿import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { socket } from '../../../services/socket';
 import { createGame, joinGame } from "../../../services/session.service";
 import {
     ChevronDown,
