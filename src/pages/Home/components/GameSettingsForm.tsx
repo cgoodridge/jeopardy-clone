@@ -1,6 +1,7 @@
 ﻿import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { socket } from '../../../services/socket';
+import { createGame, joinGame } from "../../../services/session.service";
 import {
     ChevronDown,
     ChevronRight,
@@ -23,39 +24,33 @@ const GameSettingsForm = () => {
     const [roomCode, setRoomCode] = useState("");
     const [teamCount, setTeamCount] = useState(3);
 
-    const handleStartGame = () => {
+    const handleStartGame = async () => {
+        try {
+            const response = await createGame(hostName);
 
-        socket.connect();
-
-        socket.emit("session:create", { hostName }, (response: any) => {
-
-            console.log("Server response:", response);
-            if (!response?.success) {
+            if (!response.success) {
                 console.error(response.message);
-                console.error("Session creation failed:", response?.message);
                 return;
             }
-
-            console.log("Navigating to:", `/game/${response.roomCode}`);
 
             navigate(`/play/${response.roomCode}`, {
                 state: {
                     playerId: response.playerId,
                     isHost: true,
-                }
+                    session: response.session,
+                },
             });
-        });
+        } catch (error) {
+            console.error("Could not create game:", error);
+        }
     };
 
-    const handleJoinGame = () => {
+    const handleJoinGame = async () => {
+        try {
+            const response = await joinGame(roomCode, playerName);
 
-        socket.connect();
-
-        socket.emit("session:join", { playerName, roomCode }, (response: any) => {
-
-            if (!response?.success) {
+            if (!response.success) {
                 console.error(response.message);
-                console.error("Session creation failed:", response?.message);
                 return;
             }
 
@@ -63,9 +58,12 @@ const GameSettingsForm = () => {
                 state: {
                     playerId: response.playerId,
                     isHost: false,
-                }
+                    session: response.session,
+                },
             });
-        });
+        } catch (error) {
+            console.error("Could not join game:", error);
+        }
     };
 
     return (
@@ -204,6 +202,7 @@ const GameSettingsForm = () => {
                 value={hostName}
                 onChange={(e) => setHostName(e.target.value)}
                 placeholder="Enter your name as host."
+                className="mt-5 w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-100 placeholder-slate-400 outline-none transition-colors focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
             />
 
             <button
@@ -214,17 +213,19 @@ const GameSettingsForm = () => {
                 Create game
                 <ChevronRight aria-hidden="true" size={17} />
             </button>
-            <hr />
+
             <input
                 value={playerName}
                 onChange={(e) => setPlayerName(e.target.value)}
                 placeholder="Enter your name."
+                className="mt-5 w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-100 placeholder-slate-400 outline-none transition-colors focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
             />
 
             <input
                 value={roomCode}
                 onChange={(e) => setRoomCode(e.target.value)}
                 placeholder="Room code"
+                className="mt-5 w-full rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-100 placeholder-slate-400 outline-none transition-colors focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
             />
 
             <button
