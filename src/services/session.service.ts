@@ -1,5 +1,6 @@
 import { socket } from "./socket";
 import type { SessionResponse } from "../pages/game_board/types/session.types";
+import { saveRejoinCredentials } from "../utils/rejoinStorage";
 
 export function createGame(
     playerName: string
@@ -40,6 +41,19 @@ export function joinGame(
                 if (error) {
                     reject(new Error("The server did not repond."));
                     return;
+                }
+
+                if (
+                    response.success &&
+                    response.playerId &&
+                    response.rejoinToken &&
+                    response.roomCode
+                ) {
+                    saveRejoinCredentials({
+                        roomCode: response.roomCode,
+                        playerId: response.playerId,
+                        rejoinToken: response.rejoinToken,
+                    });
                 }
 
                 resolve(response);

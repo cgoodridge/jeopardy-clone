@@ -23,5 +23,6 @@ export interface SessionResponse {
   message?: string;
   roomCode?: string;
   playerId?: string;
+  rejoinToken?: string;
   session?: GameSession;
 }
